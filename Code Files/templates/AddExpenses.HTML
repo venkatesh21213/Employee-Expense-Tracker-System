@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Expense Tracker</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <style>
+    .row.content {height: 1500px}
+  
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+
+    .hamburger {
+      width: 35px;
+      height: 3px;
+      background-color: black;
+      margin: 6px 0;
+      margin-right: 0px;
+      margin-left: auto;
+    }
+  </style>
+  
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h4>Expense Tracker</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="{{url_for('home')}}">Dashboard</a></li>
+        <li class="active"><a href="{{url_for('about')}}">Create/Edit Expenses</a></li>
+        <li><a href="{{url_for('list')}}">Result</a></li>
+        <li><a href="{{url_for('logout')}}">Logout</a></button></li>
+      </ul>
+    </div>
+
+    <div class="col-sm-9">
+      <h1><small>Create/Edit Expenses
+      </small>
+      </h1>
+      <hr>
+      <h2>Expenses List</h2>
+      <br>
+      <form action="{{ url_for('about') }}" method="post">
+        <input name="name" type="text" placeholder="Enter Expense Name" class="textbox" id="name"/></br></br>
+					<input name="expenses_amount" type="text" placeholder="Enter Expense Amount" class="textbox" id="expenses_amount"/></br></br>
+          <input name="expenses_budget" type="text" placeholder="Enter Budget" class="textbox" id="expenses_budget"/></br></br>
+        <input type="submit" class="btn" value="Add"></br>
+      </form>   
+      <br>
+      <br>
+
+      </div>  
+   </div>
+
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
